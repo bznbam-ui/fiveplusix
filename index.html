@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FivePluSix is a creative label built across music, film, digital identity, and visual culture — where every project is built to last.">
+<link rel="icon" href="assets/img/logo.png" type="image/png">
+<meta property="og:title" content="FivePluSix — Art Across Dimensions">
+<meta property="og:description" content="FivePluSix is a creative label built across music, film, digital identity, and visual culture — where every project is built to last.">
+<meta property="og:image" content="https://fiveplussix.com/assets/img/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fiveplussix.com/">
+<title>FivePluSix — Art Across Dimensions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+<style>
+/* ── HOME-ONLY STYLES ───────────────────────── */
+.intro-stem{position:absolute;top:0;left:64px;width:1px;height:68px;background:linear-gradient(to bottom,transparent,var(--red2))}
+.intro-text{max-width:800px;font-family:var(--serif);font-size:clamp(22px,2.7vw,36px);font-weight:300;line-height:1.54;color:rgba(240,236,230,.70)}
+.intro-text em{font-style:italic;color:rgba(240,236,230,.94)}
+.intro-metrics{display:flex;flex-wrap:wrap;gap:64px;margin-top:72px;padding-top:50px;border-top:1px solid var(--edge)}
+.metric-num{font-family:var(--serif);font-size:56px;font-weight:300;line-height:1;letter-spacing:-.03em}
+.metric-num sup{color:var(--red);font-size:.5em;vertical-align:top;margin-top:.18em}
+.metric-label{font-family:var(--serif);font-style:italic;font-weight:300;font-size:11px;letter-spacing:.14em;color:var(--dim);margin-top:8px}
+
+.div-head{padding:0 64px;max-width:1440px;margin:0 auto 60px;display:flex;align-items:flex-end;justify-content:space-between}
+.div-head h2{font-size:clamp(32px,3.8vw,54px)}
+.div-more{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:8px;transition:gap .22s}
+.div-more::after{content:'→'}
+.div-more:hover{gap:14px}
+.div-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--edge)}
+.div-card{background:var(--bg);padding:42px 30px;min-height:330px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:background .35s}
+.div-card::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,transparent 50%,rgba(201,24,24,.05) 100%);opacity:0;transition:opacity .4s}
+.div-card:hover{background:#0e0808}
+.div-card:hover::after{opacity:1}
+.div-n{position:absolute;top:28px;right:24px;font-family:var(--serif);font-size:78px;font-weight:300;line-height:1;letter-spacing:-.04em;color:var(--faint);opacity:.45;transition:color .35s,opacity .35s}
+.div-card:hover .div-n{color:var(--red);opacity:.15}
+.div-bar{width:28px;height:1px;background:var(--red2);margin-bottom:24px;transition:width .35s}
+.div-card:hover .div-bar{width:46px}
+.div-title{font-size:12px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--text);margin-bottom:12px}
+.div-desc{font-size:12.5px;color:var(--dim);line-height:1.72;margin-bottom:24px}
+.div-tags{display:flex;flex-wrap:wrap;gap:5px}
+.div-tag{font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);border:1px solid var(--edge);padding:3px 8px;transition:color .22s,border-color .22s}
+.div-card:hover .div-tag{color:var(--red);border-color:var(--red2)}
+
+/* Hero */
+#hero{position:relative;width:100%;height:100vh;min-height:640px;display:flex;overflow:hidden}
+.h-video-wrap{position:absolute;inset:0;z-index:0;background:#060505}
+.h-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 2.2s ease-in-out;pointer-events:none}
+.h-vid.active{opacity:1}
+.h-vig{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to bottom,rgba(8,8,8,.65) 0%,transparent 24%,transparent 56%,rgba(8,8,8,1) 100%),radial-gradient(ellipse 60% 45% at 50% 50%,transparent 0%,rgba(8,8,8,.45) 100%)}
+.h-grad{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.85) 0%,rgba(8,8,8,.35) 52%,rgba(8,8,8,.02) 100%)}
+.h-inner{position:relative;z-index:10;width:100%;max-width:1440px;margin:0 auto;padding:0 64px;display:flex;align-items:stretch}
+.h-left{flex:1;display:flex;flex-direction:column;justify-content:center;padding-top:72px;max-width:640px}
+.h-eyebrow{font-size:8.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:28px;opacity:0;animation:fadeUp .8s var(--eout) .5s forwards}
+.h-h1{font-family:var(--serif);font-size:clamp(50px,6.4vw,90px);font-weight:400;line-height:1.02;letter-spacing:-.015em;color:rgba(240,236,230,.97);margin-bottom:26px;opacity:0;animation:fadeUp 1s var(--eout) .7s forwards;text-shadow:0 2px 40px rgba(0,0,0,.7),0 1px 8px rgba(0,0,0,.5)}
+.h-h1 em{font-style:italic;color:var(--red)}
+.h-rule{width:42px;height:1px;background:var(--red2);margin-bottom:20px;opacity:0;animation:fadeUp .7s var(--eout) .88s forwards}
+.h-sub{font-size:15px;font-weight:300;color:var(--dim);line-height:1.76;max-width:420px;margin-bottom:44px;opacity:0;animation:fadeUp .8s var(--eout) 1.02s forwards;text-shadow:0 1px 20px rgba(0,0,0,.8)}
+.h-btns{display:flex;align-items:center;gap:24px;opacity:0;animation:fadeUp .8s var(--eout) 1.16s forwards}
+.btn-fill{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--red);padding:13px 28px;border:none;transition:opacity .22s}
+.btn-fill:hover{opacity:.82}
+.btn-ghost{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:8px;transition:color .22s}
+.btn-ghost .arr{transition:transform .22s}
+.btn-ghost:hover{color:var(--text)}
+.btn-ghost:hover .arr{transform:translateX(5px)}
+.h-right{width:260px;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:64px;padding-top:72px;opacity:0;animation:fadeIn 1s var(--eout) 1.4s forwards}
+.h-right-lbl{font-size:8px;letter-spacing:.26em;text-transform:uppercase;color:var(--faint);padding-bottom:12px;border-bottom:1px solid var(--edge)}
+.h-svc{display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid var(--edge);transition:border-color .22s}
+.h-svc:hover{border-bottom-color:var(--red2)}
+.h-svc-n{font-family:var(--serif);font-size:11px;color:var(--red);font-style:italic;flex-shrink:0;margin-top:1px}
+.h-svc-name{font-size:11px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:rgba(240,236,230,.82);margin-bottom:2px}
+.h-svc-desc{font-size:9px;color:var(--dim);letter-spacing:.02em;line-height:1.6}
+.h-scroll{position:absolute;bottom:28px;left:64px;z-index:10;display:flex;align-items:center;gap:13px;opacity:0;animation:fadeIn 1s var(--eout) 1.9s forwards}
+.h-scroll-txt{font-size:8px;letter-spacing:.26em;text-transform:uppercase;color:var(--faint)}
+.h-scroll-track{width:38px;height:1px;background:var(--edge);position:relative;overflow:hidden}
+.h-scroll-fill{position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--red);animation:scrollLine 2.4s ease 2.2s infinite}
+.h-dots{position:absolute;bottom:34px;right:52px;z-index:10;display:flex;gap:8px;opacity:0;animation:fadeIn 1s var(--eout) 1.9s forwards}
+.h-dot{width:5px;height:5px;border-radius:50%;background:rgba(240,236,230,.18);transition:background .4s,transform .4s}
+.h-dot.active{background:var(--red);transform:scale(1.3)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scrollLine{from{left:-100%}to{left:100%}}
+
+@media(max-width:768px){
+  #intro{padding:72px 24px 64px}.intro-stem{left:24px}
+  #divisions{padding-bottom:80px}.div-head{padding:0 24px}
+  .div-grid{grid-template-columns:1fr;gap:1px}
+  #work{padding:0 24px 80px}
+  .w-grid{grid-template-columns:1fr;gap:2px}
+  .w-cell{grid-column:span 1!important}
+  #hero{height:100svh;min-height:560px}
+  .h-inner{padding:0 24px}
+  .h-left{padding-top:62px;max-width:100%}
+  .h-h1{font-size:clamp(38px,11vw,58px)}
+  .h-sub{font-size:13.5px;max-width:100%}
+  .h-scroll{left:24px;bottom:22px}
+  .h-dots{right:20px;bottom:26px}
+  .h-btns{flex-direction:column;align-items:flex-start;gap:16px}
+  .h-right{display:none}
+}
+@media(max-width:1200px){
+  .div-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body data-page="home">
+
+<div id="cur"></div>
+
+<div id="preloader">
+  <div id="pre-word">FivePluSix</div>
+  <div id="pre-line"></div>
+</div>
+
+<nav id="nav">
+  <a href="index.html" class="logo-text">
+    <img class="logo-mark-img" src="assets/img/logo.png" alt="FivePluSix">
+    <div>
+      <span class="logo-name">FivePluSix</span>
+      <span class="logo-sub-txt">Art Across Dimensions</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="work.html" data-page="work">Work</a>
+    <a href="music.html" data-page="music">Music</a>
+    <a href="film.html" data-page="film">Film</a>
+    <a href="team.html" data-page="team">Team</a>
+    <a href="contact.html" data-page="contact">Contact</a>
+  </div>
+  <a href="contact.html" class="nav-cta">Start a Project</a>
+  <button class="hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="m-nav" id="mNav">
+  <button class="m-close" id="mClose">×</button>
+  <a href="work.html">Work</a>
+  <a href="music.html">Music</a>
+  <a href="film.html">Film</a>
+  <a href="team.html">Team</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="h-video-wrap">
+    <video class="h-vid active" id="vid0" src="hero-video.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
+    <video class="h-vid" id="vid1" src="" muted loop playsinline preload="none"></video>
+    <video class="h-vid" id="vid2" src="" muted loop playsinline preload="none"></video>
+  </div>
+  <div class="h-vig"></div>
+  <div class="h-grad"></div>
+  <div class="h-inner">
+    <div class="h-left">
+      <div class="h-eyebrow">Est. 2017</div>
+      <h1 class="h-h1">Music. Film.<br>Culture.<br><em>Uncompromised.</em></h1>
+      <div class="h-rule"></div>
+      <p class="h-sub">FivePluSix is a creative label built across music, film, digital identity, and visual culture — where every project is built to last.</p>
+      <div class="h-btns">
+        <a href="work.html" class="btn-fill">Explore Work</a>
+        <a href="contact.html" class="btn-ghost">Start a Project <span class="arr">→</span></a>
+      </div>
+    </div>
+    <div class="h-right">
+      <div class="h-right-lbl">What We Do</div>
+      <div class="h-svc"><span class="h-svc-n">01</span><div><div class="h-svc-name">Music</div><div class="h-svc-desc">Production, Recording, Artist Development</div></div></div>
+      <div class="h-svc"><span class="h-svc-n">02</span><div><div class="h-svc-name">Film</div><div class="h-svc-desc">Music Videos, Commercials, Short Films</div></div></div>
+      <div class="h-svc"><span class="h-svc-n">03</span><div><div class="h-svc-name">Digital</div><div class="h-svc-desc">Websites, Brand Identity, Experiences</div></div></div>
+      <div class="h-svc"><span class="h-svc-n">04</span><div><div class="h-svc-name">Creative Direction</div><div class="h-svc-desc">Visual Identity, Concept, Strategy</div></div></div>
+    </div>
+  </div>
+  <div class="h-scroll"><span class="h-scroll-txt">Scroll</span><div class="h-scroll-track"><div class="h-scroll-fill"></div></div></div>
+  <div class="h-dots" id="hDots"></div>
+</section>
+
+<!-- INTRO -->
+<section id="intro" style="padding:120px 64px;max-width:1440px;margin:0 auto;position:relative">
+  <div class="intro-stem"></div>
+  <span class="eyebrow reveal">The Label</span>
+  <p class="intro-text reveal d1">FivePluSix is a creative label built for artists, brands, and cultural projects — operating across <em>music, film, digital, and everything in between.</em> We don't wait for culture. We make it.</p>
+  <div class="intro-metrics">
+    <div class="reveal d1"><div class="metric-num">5<sup>+</sup></div><div class="metric-label">Creative Divisions</div></div>
+    <div class="reveal d2"><div class="metric-num">∞</div><div class="metric-label">Output</div></div>
+    <div class="reveal d3"><div class="metric-num">17</div><div class="metric-label">Est. 2017</div></div>
+    <div class="reveal d4"><div class="metric-num">01</div><div class="metric-label">Standard</div></div>
+  </div>
+</section>
+
+<!-- DIVISIONS -->
+<section id="divisions" style="padding-bottom:120px">
+  <div class="div-head">
+    <div><span class="eyebrow reveal">What We Build</span><h2 class="reveal d1">Five Lanes.<br>One Label.</h2></div>
+    <a href="work.html" class="div-more reveal d2">All Work</a>
+  </div>
+  <div class="div-grid">
+    <a href="music.html" class="div-card reveal"><div class="div-n">01</div><div class="div-bar"></div><div class="div-title">Music & Label</div><div class="div-desc">Artist development, recording, production, and music releases under the FivePluSix label.</div><div class="div-tags"><span class="div-tag">Artists</span><span class="div-tag">Recording</span><span class="div-tag">Release</span></div></a>
+    <a href="film.html" class="div-card reveal d1"><div class="div-n">02</div><div class="div-bar"></div><div class="div-title">Film & Production</div><div class="div-desc">Music videos, commercial films, AI-assisted productions, and original visual projects.</div><div class="div-tags"><span class="div-tag">MV</span><span class="div-tag">Commercial</span><span class="div-tag">AI Film</span></div></a>
+    <a href="work.html" class="div-card reveal d2"><div class="div-n">03</div><div class="div-bar"></div><div class="div-title">Digital Experiences</div><div class="div-desc">Websites, digital identity, and brand campaigns for artists and brands who want to stand out.</div><div class="div-tags"><span class="div-tag">Web</span><span class="div-tag">Identity</span><span class="div-tag">UX</span></div></a>
+    <a href="work.html" class="div-card reveal d3"><div class="div-n">04</div><div class="div-bar"></div><div class="div-title">Creative Direction</div><div class="div-desc">Concept development, art direction, and visual strategy from brief to final output.</div><div class="div-tags"><span class="div-tag">Direction</span><span class="div-tag">Strategy</span><span class="div-tag">Concept</span></div></a>
+    <a href="work.html" class="div-card reveal d4"><div class="div-n">05</div><div class="div-bar"></div><div class="div-title">Talent & Campaigns</div><div class="div-desc">Selected client and talent projects — for brands and people who know what they want.</div><div class="div-tags"><span class="div-tag">Talent</span><span class="div-tag">Campaign</span><span class="div-tag">Brands</span></div></a>
+  </div>
+</section>
+
+<!-- WORK PREVIEW -->
+<section id="work" style="padding:0 64px 120px;max-width:1440px;margin:0 auto">
+  <div class="sec-head">
+    <div><span class="eyebrow reveal">Portfolio</span><h2 class="reveal d1">Selected Work</h2></div>
+    <a href="work.html" class="see-all reveal d2">All Projects</a>
+  </div>
+  <div class="w-grid">
+    <a href="projects/le-saint-mark.html" class="w-cell reveal"><div class="w-ph"><div class="w-icon">▶</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Music · Visual Identity</div><div class="w-title">Le Saint Mark — Campaign</div></div></a>
+    <a href="projects/brand-campaign.html" class="w-cell reveal d1"><div class="w-ph"><div class="w-icon">◻</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Digital</div><div class="w-title">Brand Campaign</div></div></a>
+    <a href="projects/short-film.html" class="w-cell reveal d2"><div class="w-ph"><div class="w-icon">◈</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Film</div><div class="w-title">Short Film Production</div></div></a>
+    <a href="projects/lfa.html" class="w-cell reveal d1"><div class="w-ph"><div class="w-icon">◎</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Music</div><div class="w-title">LFA — Letters for August</div></div></a>
+    <a href="projects/visual-concept.html" class="w-cell reveal d2"><div class="w-ph"><div class="w-icon">△</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Creative Direction</div><div class="w-title">Visual Concept Series</div></div></a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-section">
+  <div class="svc-glow"></div>
+  <div class="svc-inner">
+    <div class="svc-left">
+      <span class="eyebrow reveal">Capabilities</span>
+      <h2 class="reveal d1">Idea to release.<br><em>Nothing skipped.</em></h2>
+      <p class="reveal d2">Full creative process — concept, production, strategy, delivery. We don't hand off. We see it through.</p>
+      <a href="contact.html" class="svc-cta reveal d3">Discuss a Project</a>
+    </div>
+    <div class="svc-list">
+      <div class="svc-item reveal"><span class="svc-name">Artist Branding & Identity</span><span class="svc-arr">→</span></div>
+      <div class="svc-item reveal d1"><span class="svc-name">Music Video Production</span><span class="svc-arr">→</span></div>
+      <div class="svc-item reveal d2"><span class="svc-name">Commercial Film</span><span class="svc-arr">→</span></div>
+      <div class="svc-item reveal d3"><span class="svc-name">Websites & Digital Identity</span><span class="svc-arr">→</span></div>
+      <div class="svc-item reveal d4"><span class="svc-name">Brand Campaigns</span><span class="svc-arr">→</span></div>
+      <div class="svc-item reveal"><span class="svc-name">Visual Storytelling</span><span class="svc-arr">→</span></div>
+      <div class="svc-item reveal d1"><span class="svc-name">Creative Direction</span><span class="svc-arr">→</span></div>
+      <div class="svc-item reveal d2"><span class="svc-name">AI-Assisted Production</span><span class="svc-arr">→</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-wordmark">FivePluSix</div>
+      <div class="foot-meta-txt">Est. 2017</div>
+    </div>
+    <div class="foot-links">
+      <a href="#">Instagram</a><a href="#">YouTube</a><a href="#">Vimeo</a><a href="#">SoundCloud</a><a href="#">LinkedIn</a>
+    </div>
+    <div class="foot-copy">© FivePluSix 2026 — All Rights Reserved</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+/* Video rotation */
+(function(){
+  const videos = Array.from(document.querySelectorAll('.h-vid'));
+  const dotsContainer = document.getElementById('hDots');
+  if (!dotsContainer) return;
+  function hasSource(v){ const s = v.getAttribute('src'); return s && s.trim() !== ''; }
+  const active = videos.filter(hasSource);
+  if (active.length < 2) {
+    dotsContainer.style.display = 'none';
+    return;
+  }
+  active.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'h-dot' + (i === 0 ? ' active' : '');
+    dotsContainer.appendChild(dot);
+  });
+  const dots = Array.from(dotsContainer.querySelectorAll('.h-dot'));
+  let current = 0;
+  setInterval(() => {
+    const prev = current;
+    current = (current + 1) % active.length;
+    active[prev].classList.remove('active');
+    active[current].classList.add('active');
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }, 8000);
+})();
+</script>
+</body>
+</html>
