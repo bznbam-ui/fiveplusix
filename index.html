@@ -18,11 +18,6 @@
 /* ── HOME-ONLY STYLES ───────────────────────── */
 .intro-stem{position:absolute;top:0;left:64px;width:1px;height:68px;background:linear-gradient(to bottom,transparent,var(--red2))}
 .intro-text{max-width:800px;font-family:var(--serif);font-size:clamp(22px,2.7vw,36px);font-weight:300;line-height:1.54;color:rgba(240,236,230,.70)}
-.intro-text em{font-style:italic;color:rgba(240,236,230,.94)}
-.intro-metrics{display:flex;flex-wrap:wrap;gap:64px;margin-top:72px;padding-top:50px;border-top:1px solid var(--edge)}
-.metric-num{font-family:var(--serif);font-size:56px;font-weight:300;line-height:1;letter-spacing:-.03em}
-.metric-num sup{color:var(--red);font-size:.5em;vertical-align:top;margin-top:.18em}
-.metric-label{font-family:var(--serif);font-style:italic;font-weight:300;font-size:11px;letter-spacing:.14em;color:var(--dim);margin-top:8px}
 
 .div-head{padding:0 64px;max-width:1440px;margin:0 auto 60px;display:flex;align-items:flex-end;justify-content:space-between}
 .div-head h2{font-size:clamp(32px,3.8vw,54px)}
@@ -38,10 +33,10 @@
 .div-card:hover .div-n{color:var(--red);opacity:.15}
 .div-bar{width:28px;height:1px;background:var(--red2);margin-bottom:24px;transition:width .35s}
 .div-card:hover .div-bar{width:46px}
-.div-title{font-size:12px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--text);margin-bottom:12px}
-.div-desc{font-size:12.5px;color:var(--dim);line-height:1.72;margin-bottom:24px}
+.div-title{font-size:13px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--text);margin-bottom:12px}
+.div-desc{font-size:15px;color:var(--dim);line-height:1.72;margin-bottom:24px}
 .div-tags{display:flex;flex-wrap:wrap;gap:5px}
-.div-tag{font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);border:1px solid var(--edge);padding:3px 8px;transition:color .22s,border-color .22s}
+.div-tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);border:1px solid var(--edge);padding:3px 8px;transition:color .22s,border-color .22s}
 .div-card:hover .div-tag{color:var(--red);border-color:var(--red2)}
 
 /* Hero */
@@ -65,29 +60,28 @@
 .btn-ghost .arr{transition:transform .22s}
 .btn-ghost:hover{color:var(--text)}
 .btn-ghost:hover .arr{transform:translateX(5px)}
-.h-right{width:260px;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:64px;padding-top:72px;opacity:0;animation:fadeIn 1s var(--eout) 1.4s forwards}
-.h-right-lbl{font-size:8px;letter-spacing:.26em;text-transform:uppercase;color:var(--faint);padding-bottom:12px;border-bottom:1px solid var(--edge)}
+.home-what-we-do{padding:0 64px 80px;max-width:1440px;margin:0 auto}
+.home-what-we-do .h-right-lbl{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);padding-bottom:12px;border-bottom:1px solid var(--edge);margin-bottom:8px}
+.home-svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--edge)}
+.home-svc-grid .h-svc{background:var(--bg);padding:24px 22px;border-bottom:none}
 .h-svc{display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid var(--edge);transition:border-color .22s}
 .h-svc:hover{border-bottom-color:var(--red2)}
-.h-svc-n{font-family:var(--serif);font-size:11px;color:var(--red);font-style:italic;flex-shrink:0;margin-top:1px}
-.h-svc-name{font-size:11px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:rgba(240,236,230,.82);margin-bottom:2px}
-.h-svc-desc{font-size:9px;color:var(--dim);letter-spacing:.02em;line-height:1.6}
-.h-scroll{position:absolute;bottom:28px;left:64px;z-index:10;display:flex;align-items:center;gap:13px;opacity:0;animation:fadeIn 1s var(--eout) 1.9s forwards}
-.h-scroll-txt{font-size:8px;letter-spacing:.26em;text-transform:uppercase;color:var(--faint)}
-.h-scroll-track{width:38px;height:1px;background:var(--edge);position:relative;overflow:hidden}
-.h-scroll-fill{position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--red);animation:scrollLine 2.4s ease 2.2s infinite}
+.h-svc-n{font-family:var(--serif);font-size:13px;color:var(--red);font-style:italic;flex-shrink:0;margin-top:1px}
+.h-svc-name{font-size:13px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:rgba(240,236,230,.82);margin-bottom:4px}
+.h-svc-desc{font-size:14px;color:var(--dim);letter-spacing:.02em;line-height:1.6}
 .h-dots{position:absolute;bottom:34px;right:52px;z-index:10;display:flex;gap:8px;opacity:0;animation:fadeIn 1s var(--eout) 1.9s forwards}
 .h-dot{width:5px;height:5px;border-radius:50%;background:rgba(240,236,230,.18);transition:background .4s,transform .4s}
 .h-dot.active{background:var(--red);transform:scale(1.3)}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes scrollLine{from{left:-100%}to{left:100%}}
 
 @media(max-width:768px){
   #intro{padding:72px 24px 64px}.intro-stem{left:24px}
   #divisions{padding-bottom:80px}.div-head{padding:0 24px}
   .div-grid{grid-template-columns:1fr;gap:1px}
+  .home-what-we-do{padding:0 24px 64px}
+  .home-svc-grid{grid-template-columns:1fr}
   #work{padding:0 24px 80px}
   .w-grid{grid-template-columns:1fr;gap:2px}
   .w-cell{grid-column:span 1!important}
@@ -96,19 +90,16 @@
   .h-left{padding-top:62px;max-width:100%}
   .h-h1{font-size:clamp(38px,11vw,58px)}
   .h-sub{font-size:13.5px;max-width:100%}
-  .h-scroll{left:24px;bottom:22px}
   .h-dots{right:20px;bottom:26px}
   .h-btns{flex-direction:column;align-items:flex-start;gap:16px}
-  .h-right{display:none}
 }
 @media(max-width:1200px){
   .div-grid{grid-template-columns:repeat(3,1fr)}
+  .home-svc-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
 <body data-page="home">
-
-<div id="cur"></div>
 
 <div id="preloader">
   <div id="pre-word">FivePluSix</div>
@@ -155,43 +146,39 @@
   <div class="h-inner">
     <div class="h-left">
       <div class="h-eyebrow">Est. 2017</div>
-      <h1 class="h-h1">Music. Film.<br>Culture.<br><em>Uncompromised.</em></h1>
+      <h1 class="h-h1">A creative label across music, film, and culture.</h1>
       <div class="h-rule"></div>
-      <p class="h-sub">FivePluSix is a creative label built across music, film, digital identity, and visual culture — where every project is built to last.</p>
+      <p class="h-sub">FivePluSix produces sound, image, and story — built to last, not to trend.</p>
       <div class="h-btns">
         <a href="work.html" class="btn-fill">Explore Work</a>
         <a href="contact.html" class="btn-ghost">Start a Project <span class="arr">→</span></a>
       </div>
     </div>
-    <div class="h-right">
-      <div class="h-right-lbl">What We Do</div>
-      <div class="h-svc"><span class="h-svc-n">01</span><div><div class="h-svc-name">Music</div><div class="h-svc-desc">Production, Recording, Artist Development</div></div></div>
-      <div class="h-svc"><span class="h-svc-n">02</span><div><div class="h-svc-name">Film</div><div class="h-svc-desc">Music Videos, Commercials, Short Films</div></div></div>
-      <div class="h-svc"><span class="h-svc-n">03</span><div><div class="h-svc-name">Digital</div><div class="h-svc-desc">Websites, Brand Identity, Experiences</div></div></div>
-      <div class="h-svc"><span class="h-svc-n">04</span><div><div class="h-svc-name">Creative Direction</div><div class="h-svc-desc">Visual Identity, Concept, Strategy</div></div></div>
-    </div>
   </div>
-  <div class="h-scroll"><span class="h-scroll-txt">Scroll</span><div class="h-scroll-track"><div class="h-scroll-fill"></div></div></div>
   <div class="h-dots" id="hDots"></div>
 </section>
 
 <!-- INTRO -->
 <section id="intro" style="padding:120px 64px;max-width:1440px;margin:0 auto;position:relative">
   <div class="intro-stem"></div>
-  <span class="eyebrow reveal">The Label</span>
-  <p class="intro-text reveal d1">FivePluSix is a creative label built for artists, brands, and cultural projects — operating across <em>music, film, digital, and everything in between.</em> We don't wait for culture. We make it.</p>
-  <div class="intro-metrics">
-    <div class="reveal d1"><div class="metric-num">5<sup>+</sup></div><div class="metric-label">Creative Divisions</div></div>
-    <div class="reveal d2"><div class="metric-num">∞</div><div class="metric-label">Output</div></div>
-    <div class="reveal d3"><div class="metric-num">17</div><div class="metric-label">Est. 2017</div></div>
-    <div class="reveal d4"><div class="metric-num">01</div><div class="metric-label">Standard</div></div>
+  <p class="intro-text reveal d1">FivePluSix is a creative label working across music, film, digital identity, and visual culture. We build for artists and brands who think in decades, not quarters.</p>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="home-what-we-do" id="what-we-do">
+  <div class="h-right-lbl reveal">What We Do</div>
+  <div class="home-svc-grid reveal d1">
+    <div class="h-svc"><span class="h-svc-n">01</span><div><div class="h-svc-name">Music</div><div class="h-svc-desc">Production, Recording, Artist Development</div></div></div>
+    <div class="h-svc"><span class="h-svc-n">02</span><div><div class="h-svc-name">Film</div><div class="h-svc-desc">Music Videos, Commercials, Short Films</div></div></div>
+    <div class="h-svc"><span class="h-svc-n">03</span><div><div class="h-svc-name">Digital</div><div class="h-svc-desc">Websites, Brand Identity, Experiences</div></div></div>
+    <div class="h-svc"><span class="h-svc-n">04</span><div><div class="h-svc-name">Creative Direction</div><div class="h-svc-desc">Visual Identity, Concept, Strategy</div></div></div>
   </div>
 </section>
 
 <!-- DIVISIONS -->
 <section id="divisions" style="padding-bottom:120px">
   <div class="div-head">
-    <div><span class="eyebrow reveal">What We Build</span><h2 class="reveal d1">Five Lanes.<br>One Label.</h2></div>
+    <div><h2 class="reveal d1">What We Build</h2></div>
     <a href="work.html" class="div-more reveal d2">All Work</a>
   </div>
   <div class="div-grid">
@@ -223,8 +210,7 @@
   <div class="svc-glow"></div>
   <div class="svc-inner">
     <div class="svc-left">
-      <span class="eyebrow reveal">Capabilities</span>
-      <h2 class="reveal d1">Idea to release.<br><em>Nothing skipped.</em></h2>
+      <h2 class="reveal d1">Full Creative Process</h2>
       <p class="reveal d2">Full creative process — concept, production, strategy, delivery. We don't hand off. We see it through.</p>
       <a href="contact.html" class="svc-cta reveal d3">Discuss a Project</a>
     </div>

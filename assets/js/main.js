@@ -42,30 +42,6 @@ if (hbg && mNav && mClose) {
   mNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mNav.classList.remove('open')));
 }
 
-/* CROSSHAIR CURSOR */
-(function () {
-  const cur = document.getElementById('cur');
-  if (!cur) return;
-
-  window.addEventListener('mousemove', e => {
-    cur.style.left = e.clientX + 'px';
-    cur.style.top  = e.clientY + 'px';
-  }, { passive: true });
-
-  document.querySelectorAll('a,button,.w-cell,.net-card,.div-card,.svc-item,.proj-card,.artist-card,.film-card,.team-card,.roster-card').forEach(el => {
-    el.addEventListener('mouseenter', () => { cur.classList.add('hover'); cur.classList.remove('link'); });
-    el.addEventListener('mouseleave', () => { cur.classList.remove('hover'); cur.classList.remove('link'); });
-  });
-
-  document.querySelectorAll('a,.btn-fill,.f-submit').forEach(el => {
-    el.addEventListener('mouseenter', () => cur.classList.add('link'));
-    el.addEventListener('mouseleave', () => cur.classList.remove('link'));
-  });
-
-  document.addEventListener('mouseleave', () => cur.style.opacity = '0');
-  document.addEventListener('mouseenter', () => cur.style.opacity = '1');
-})();
-
 /* SCROLL REVEAL */
 (function () {
   const obs = new IntersectionObserver(entries => {
