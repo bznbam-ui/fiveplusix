@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://fiveplussix.com/">
 <title>FivePluSix — Art Across Dimensions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/main.css">
 <style>
 /* ── HOME-ONLY STYLES ───────────────────────── */
@@ -39,26 +39,21 @@
 .div-tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);border:1px solid var(--edge);padding:3px 8px;transition:color .22s,border-color .22s}
 .div-card:hover .div-tag{color:var(--red);border-color:var(--red2)}
 
-/* Hero — split panel */
-#hero{position:relative;width:100%;height:100vh;min-height:640px;display:flex;flex-direction:row;overflow:hidden}
-.h-brand-panel{flex:0 0 35%;max-width:35%;background:var(--bg);border-right:1px solid var(--edge);display:flex;align-items:center;justify-content:center;padding:88px 32px 48px}
-.h-brand-inner{display:flex;flex-direction:column;align-items:center;text-align:center}
-.h-brand-logo{width:clamp(180px,14vw,260px);height:auto;object-fit:contain;opacity:.94}
-.h-brand-line{width:40px;height:1px;background:var(--red);margin:28px auto 20px}
-.h-brand-caption{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
-.h-media-panel{flex:1;position:relative;min-width:0;min-height:0;background:#060505}
-.h-video-wrap{position:absolute;inset:0;z-index:0}
+/* Hero — full-width video */
+#hero{position:relative;width:100%;height:100vh;min-height:640px;overflow:hidden}
+.h-video-wrap{position:absolute;inset:0;z-index:0;background:#060505}
 .h-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 2.2s ease-in-out;pointer-events:none}
 .h-vid.active{opacity:1}
-.h-vig{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to bottom,rgba(8,8,8,.55) 0%,transparent 28%,transparent 50%,rgba(8,8,8,.88) 100%),radial-gradient(ellipse 70% 50% at 40% 55%,transparent 0%,rgba(8,8,8,.35) 100%)}
-.h-grad{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.5) 0%,transparent 35%)}
-.h-inner{position:absolute;z-index:10;left:0;right:0;bottom:0;padding:0 52px 72px;display:flex;align-items:flex-end;max-width:720px}
-.h-h1{font-family:var(--serif);font-size:clamp(36px,4.2vw,64px);font-weight:500;line-height:1.06;letter-spacing:-.015em;color:rgba(240,236,230,.97);margin-bottom:32px;opacity:0;animation:fadeUp 1s var(--eout) .7s forwards;text-shadow:0 2px 40px rgba(0,0,0,.7),0 1px 8px rgba(0,0,0,.5)}
-.h-h1 em{font-style:italic;color:var(--red)}
-.h-btns{display:flex;align-items:center;opacity:0;animation:fadeUp .8s var(--eout) .95s forwards}
-.btn-fill{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--red);padding:13px 28px;border:none;transition:opacity .22s}
-.btn-fill:hover{opacity:.82}
-.h-dots{position:absolute;bottom:34px;right:36px;z-index:10;display:flex;gap:8px;opacity:0;animation:fadeIn 1s var(--eout) 1.9s forwards}
+.h-vig{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to bottom,rgba(8,8,8,.65) 0%,transparent 24%,transparent 56%,rgba(8,8,8,1) 100%),radial-gradient(ellipse 60% 45% at 50% 50%,transparent 0%,rgba(8,8,8,.45) 100%)}
+.h-grad{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.85) 0%,rgba(8,8,8,.35) 52%,rgba(8,8,8,.02) 100%)}
+.h-main{position:absolute;z-index:10;left:64px;top:50%;transform:translateY(-42%);max-width:min(560px,78vw);opacity:0;animation:fadeUp 1s var(--eout) .6s forwards}
+.h-h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(40px,5.2vw,72px);font-weight:700;font-variation-settings:'opsz' 72;line-height:1.08;letter-spacing:-.02em;color:rgba(240,236,230,.97);text-shadow:0 2px 40px rgba(0,0,0,.7),0 1px 8px rgba(0,0,0,.5)}
+.h-headline-rule{width:40px;height:1px;background:var(--red);margin:22px 0 20px}
+.h-cta-link{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim);transition:color .22s}
+.h-cta-link:hover{color:var(--text)}
+.h-foot-bl{position:absolute;z-index:10;left:64px;bottom:32px;font-family:var(--serif);font-size:11px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;color:var(--faint)}
+.h-foot-br{position:absolute;z-index:10;right:64px;bottom:52px;text-align:right;display:flex;flex-direction:column;gap:6px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);line-height:1.45}
+.h-dots{position:absolute;bottom:28px;right:64px;z-index:11;display:flex;gap:8px;opacity:0;animation:fadeIn 1s var(--eout) 1.9s forwards}
 .h-dot{width:5px;height:5px;border-radius:50%;background:rgba(240,236,230,.18);transition:background .4s,transform .4s}
 .h-dot.active{background:var(--red);transform:scale(1.3)}
 
@@ -72,14 +67,12 @@
   #work{padding:0 24px 80px}
   .w-grid{grid-template-columns:1fr;gap:2px}
   .w-cell{grid-column:span 1!important}
-  #hero{flex-direction:column;height:100svh;min-height:560px}
-  .h-brand-panel{flex:0 0 auto;max-width:none;width:100%;border-right:none;border-bottom:1px solid var(--edge);padding:72px 24px 28px}
-  .h-brand-logo{width:clamp(140px,42vw,200px)}
-  .h-brand-line{margin:18px auto 14px}
-  .h-media-panel{flex:1;min-height:0}
-  .h-inner{padding:0 24px 48px;max-width:100%}
-  .h-h1{font-size:clamp(28px,8vw,44px);margin-bottom:24px}
-  .h-dots{right:20px;bottom:22px}
+  #hero{height:100svh;min-height:560px}
+  .h-main{left:24px;max-width:calc(100% - 48px);transform:translateY(-38%)}
+  .h-h1{font-size:clamp(32px,9vw,48px)}
+  .h-foot-bl{left:24px;bottom:24px;font-size:9px}
+  .h-foot-br{right:24px;bottom:44px;font-size:9px;letter-spacing:.12em}
+  .h-dots{right:24px;bottom:20px}
 }
 @media(max-width:1200px){
   .div-grid{grid-template-columns:repeat(3,1fr)}
@@ -123,31 +116,24 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="h-brand-panel">
-    <div class="h-brand-inner">
-      <img class="h-brand-logo" src="assets/img/logo.png" alt="FivePluSix">
-      <div class="h-brand-line"></div>
-      <p class="h-brand-caption">Founded in Helsinki</p>
-    </div>
+  <div class="h-video-wrap">
+    <video class="h-vid active" id="vid0" src="hero-video.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
+    <video class="h-vid" id="vid1" src="" muted loop playsinline preload="none"></video>
+    <video class="h-vid" id="vid2" src="" muted loop playsinline preload="none"></video>
   </div>
-  <div class="h-media-panel">
-    <div class="h-video-wrap">
-      <video class="h-vid active" id="vid0" src="hero-video.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
-      <video class="h-vid" id="vid1" src="" muted loop playsinline preload="none"></video>
-      <video class="h-vid" id="vid2" src="" muted loop playsinline preload="none"></video>
-    </div>
-    <div class="h-vig"></div>
-    <div class="h-grad"></div>
-    <div class="h-inner">
-      <div>
-        <h1 class="h-h1">A creative label across music, film, and culture.</h1>
-        <div class="h-btns">
-          <a href="work.html" class="btn-fill">Explore Work</a>
-        </div>
-      </div>
-    </div>
-    <div class="h-dots" id="hDots"></div>
+  <div class="h-vig"></div>
+  <div class="h-grad"></div>
+  <div class="h-main">
+    <h1 class="h-h1">A creative label<br>across music,<br>film and culture.</h1>
+    <div class="h-headline-rule"></div>
+    <a href="work.html" class="h-cta-link">Explore the Work →</a>
   </div>
+  <div class="h-foot-bl">FivePluSix</div>
+  <div class="h-foot-br">
+    <span>Founded in Helsinki</span>
+    <span>Working internationally</span>
+  </div>
+  <div class="h-dots" id="hDots"></div>
 </section>
 
 <!-- WORK PREVIEW -->

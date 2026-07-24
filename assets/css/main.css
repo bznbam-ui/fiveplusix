@@ -53,7 +53,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.06}
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;transition:background .35s,border-color .35s;border-bottom:1px solid transparent}
 nav.scrolled{background:rgba(8,8,8,.95);backdrop-filter:blur(12px);border-color:var(--edge)}
 .logo-text{display:flex;align-items:center;gap:14px}
-.logo-mark-img{height:52px;width:auto;object-fit:contain;opacity:.92;flex-shrink:0}
+.logo-mark-img{height:67px;width:auto;object-fit:contain;opacity:.92;flex-shrink:0}
 .logo-name{font-family:var(--serif);font-size:21px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,236,230,.9);line-height:1}
 .logo-sub-txt{font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
 .nav-links{display:flex;align-items:center;gap:36px}
@@ -342,7 +342,7 @@ footer{background:var(--bg2);border-top:1px solid var(--edge);padding:44px 64px}
   nav{padding:0 20px;height:62px}
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
-  .logo-mark-img{height:38px}
+  .logo-mark-img{height:49px}
   .logo-name{font-size:16px}
   .logo-sub-txt{display:none}
   .page-hero{padding:110px 24px 60px}
