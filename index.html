@@ -49,26 +49,11 @@
 .h-inner{position:relative;z-index:10;width:100%;max-width:1440px;margin:0 auto;padding:0 64px;display:flex;align-items:stretch}
 .h-left{flex:1;display:flex;flex-direction:column;justify-content:center;padding-top:72px;max-width:640px}
 .h-eyebrow{font-size:8.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:28px;opacity:0;animation:fadeUp .8s var(--eout) .5s forwards}
-.h-h1{font-family:var(--serif);font-size:clamp(50px,6.4vw,90px);font-weight:400;line-height:1.02;letter-spacing:-.015em;color:rgba(240,236,230,.97);margin-bottom:26px;opacity:0;animation:fadeUp 1s var(--eout) .7s forwards;text-shadow:0 2px 40px rgba(0,0,0,.7),0 1px 8px rgba(0,0,0,.5)}
+.h-h1{font-family:var(--serif);font-size:clamp(50px,6.4vw,90px);font-weight:500;line-height:1.02;letter-spacing:-.015em;color:rgba(240,236,230,.97);margin-bottom:36px;opacity:0;animation:fadeUp 1s var(--eout) .7s forwards;text-shadow:0 2px 40px rgba(0,0,0,.7),0 1px 8px rgba(0,0,0,.5)}
 .h-h1 em{font-style:italic;color:var(--red)}
-.h-rule{width:42px;height:1px;background:var(--red2);margin-bottom:20px;opacity:0;animation:fadeUp .7s var(--eout) .88s forwards}
-.h-sub{font-size:15px;font-weight:300;color:var(--dim);line-height:1.76;max-width:420px;margin-bottom:44px;opacity:0;animation:fadeUp .8s var(--eout) 1.02s forwards;text-shadow:0 1px 20px rgba(0,0,0,.8)}
-.h-btns{display:flex;align-items:center;gap:24px;opacity:0;animation:fadeUp .8s var(--eout) 1.16s forwards}
+.h-btns{display:flex;align-items:center;opacity:0;animation:fadeUp .8s var(--eout) .95s forwards}
 .btn-fill{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--red);padding:13px 28px;border:none;transition:opacity .22s}
 .btn-fill:hover{opacity:.82}
-.btn-ghost{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:8px;transition:color .22s}
-.btn-ghost .arr{transition:transform .22s}
-.btn-ghost:hover{color:var(--text)}
-.btn-ghost:hover .arr{transform:translateX(5px)}
-.home-what-we-do{padding:0 64px 80px;max-width:1440px;margin:0 auto}
-.home-what-we-do .h-right-lbl{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);padding-bottom:12px;border-bottom:1px solid var(--edge);margin-bottom:8px}
-.home-svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--edge)}
-.home-svc-grid .h-svc{background:var(--bg);padding:24px 22px;border-bottom:none}
-.h-svc{display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid var(--edge);transition:border-color .22s}
-.h-svc:hover{border-bottom-color:var(--red2)}
-.h-svc-n{font-family:var(--serif);font-size:13px;color:var(--red);font-style:italic;flex-shrink:0;margin-top:1px}
-.h-svc-name{font-size:13px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:rgba(240,236,230,.82);margin-bottom:4px}
-.h-svc-desc{font-size:14px;color:var(--dim);letter-spacing:.02em;line-height:1.6}
 .h-dots{position:absolute;bottom:34px;right:52px;z-index:10;display:flex;gap:8px;opacity:0;animation:fadeIn 1s var(--eout) 1.9s forwards}
 .h-dot{width:5px;height:5px;border-radius:50%;background:rgba(240,236,230,.18);transition:background .4s,transform .4s}
 .h-dot.active{background:var(--red);transform:scale(1.3)}
@@ -80,8 +65,6 @@
   #intro{padding:72px 24px 64px}.intro-stem{left:24px}
   #divisions{padding-bottom:80px}.div-head{padding:0 24px}
   .div-grid{grid-template-columns:1fr;gap:1px}
-  .home-what-we-do{padding:0 24px 64px}
-  .home-svc-grid{grid-template-columns:1fr}
   #work{padding:0 24px 80px}
   .w-grid{grid-template-columns:1fr;gap:2px}
   .w-cell{grid-column:span 1!important}
@@ -89,13 +72,10 @@
   .h-inner{padding:0 24px}
   .h-left{padding-top:62px;max-width:100%}
   .h-h1{font-size:clamp(38px,11vw,58px)}
-  .h-sub{font-size:13.5px;max-width:100%}
   .h-dots{right:20px;bottom:26px}
-  .h-btns{flex-direction:column;align-items:flex-start;gap:16px}
 }
 @media(max-width:1200px){
   .div-grid{grid-template-columns:repeat(3,1fr)}
-  .home-svc-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
@@ -147,11 +127,8 @@
     <div class="h-left">
       <div class="h-eyebrow">Est. 2017</div>
       <h1 class="h-h1">A creative label across music, film, and culture.</h1>
-      <div class="h-rule"></div>
-      <p class="h-sub">FivePluSix produces sound, image, and story — built to last, not to trend.</p>
       <div class="h-btns">
         <a href="work.html" class="btn-fill">Explore Work</a>
-        <a href="contact.html" class="btn-ghost">Start a Project <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -162,17 +139,6 @@
 <section id="intro" style="padding:120px 64px;max-width:1440px;margin:0 auto;position:relative">
   <div class="intro-stem"></div>
   <p class="intro-text reveal d1">FivePluSix is a creative label working across music, film, digital identity, and visual culture. We build for artists and brands who think in decades, not quarters.</p>
-</section>
-
-<!-- WHAT WE DO -->
-<section class="home-what-we-do" id="what-we-do">
-  <div class="h-right-lbl reveal">What We Do</div>
-  <div class="home-svc-grid reveal d1">
-    <div class="h-svc"><span class="h-svc-n">01</span><div><div class="h-svc-name">Music</div><div class="h-svc-desc">Production, Recording, Artist Development</div></div></div>
-    <div class="h-svc"><span class="h-svc-n">02</span><div><div class="h-svc-name">Film</div><div class="h-svc-desc">Music Videos, Commercials, Short Films</div></div></div>
-    <div class="h-svc"><span class="h-svc-n">03</span><div><div class="h-svc-name">Digital</div><div class="h-svc-desc">Websites, Brand Identity, Experiences</div></div></div>
-    <div class="h-svc"><span class="h-svc-n">04</span><div><div class="h-svc-name">Creative Direction</div><div class="h-svc-desc">Visual Identity, Concept, Strategy</div></div></div>
-  </div>
 </section>
 
 <!-- DIVISIONS -->
