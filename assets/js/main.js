@@ -1,4 +1,5 @@
 /* ── FIVEPLUSIX — SHARED JS ─────────────────────────── */
+/* Deploy trigger: Cloudflare Pages rebuild */
 
 /* PRELOADER */
 window.addEventListener('DOMContentLoaded', () => {
