@@ -11,3 +11,6 @@
 
 # Original uncompressed hero source (compressed hero-video.mp4 is tracked)
 hero 5+6 updated.mov
+
+# Local Cloudflare Pages secrets
+.dev.vars

@@ -131,8 +131,7 @@
   <!-- RIGHT: Form -->
   <div class="reveal d2">
     <span class="eyebrow">Project Brief</span>
-    <form class="con-form" name="contact" method="POST" data-netlify="true" style="margin-top:32px">
-      <input type="hidden" name="form-name" value="contact">
+    <form class="con-form" id="contactForm" name="contact" method="POST" style="margin-top:32px">
       <div class="f-row">
         <div class="f-group">
           <label class="f-label">Name</label>
@@ -213,5 +212,60 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script>
+(function () {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector('.f-submit');
+    const payload = {
+      name: form.elements.name?.value?.trim() || '',
+      email: form.elements.email?.value?.trim() || '',
+      'project-type': form.elements['project-type']?.value?.trim() || '',
+      budget: form.elements.budget?.value?.trim() || '',
+      message: form.elements.message?.value?.trim() || '',
+    };
+
+    console.log('[contact] POST /api/contact', payload);
+
+    if (submitBtn) submitBtn.disabled = true;
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const text = await res.text();
+      let data;
+      try {
+        data = text ? JSON.parse(text) : {};
+      } catch {
+        data = { raw: text };
+      }
+
+      console.log('[contact] response status:', res.status, res.statusText);
+      console.log('[contact] response body:', data);
+
+      if (!res.ok) {
+        console.error('[contact] send failed:', data.error || data);
+        if (data.details) console.error('[contact] details:', data.details);
+        return;
+      }
+
+      console.log('[contact] message sent successfully');
+      form.reset();
+    } catch (err) {
+      console.error('[contact] network or client error:', err);
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
+  });
+})();
+</script>
 </body>
 </html>
