@@ -39,14 +39,15 @@
 .div-tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);border:1px solid var(--edge);padding:3px 8px;transition:color .22s,border-color .22s}
 .div-card:hover .div-tag{color:var(--red);border-color:var(--red2)}
 
-/* Home nav lockup — crop square logo.png to top 1+1 mark row */
-body[data-page="home"] .logo-text{gap:12px;align-items:center}
-body[data-page="home"] .logo-mark-wrap{display:block;height:42px;overflow:hidden;flex-shrink:0;line-height:0}
-body[data-page="home"] .logo-mark-wrap .logo-mark-img{display:block;width:132px;height:auto;max-width:none;max-height:none;opacity:.92}
-body[data-page="home"] .logo-lockup-name{font-family:var(--serif);font-size:clamp(17px,1.5vw,21px);font-weight:400;letter-spacing:.06em;color:rgba(240,236,230,.92);line-height:1;white-space:nowrap}
+/* Home nav + CTA logo — full lockup, no overflow crop */
+body[data-page="home"] .logo-text{align-items:center}
+body[data-page="home"] .logo-mark-img{height:46px;width:auto;max-width:none;max-height:none;object-fit:contain;object-position:center;opacity:.92}
 body[data-page="home"] .svc-cta-home::after{content:none}
-body[data-page="home"] .svc-cta-mark-wrap{display:block;height:18px;width:56px;overflow:hidden;flex-shrink:0;line-height:0}
-body[data-page="home"] .svc-cta-mark{display:block;width:56px;height:auto;opacity:.95}
+body[data-page="home"] .svc-cta-mark{height:18px;width:auto;max-width:72px;object-fit:contain;object-position:center;display:block;flex-shrink:0;opacity:.95}
+
+/* Home footer mark */
+body[data-page="home"] .foot-logo-img{height:36px;width:auto;object-fit:contain;object-position:center;opacity:.72;display:block;margin-bottom:10px}
+body[data-page="home"] .foot-left{display:flex;flex-direction:column;align-items:flex-start}
 
 /* Hero — full-width video */
 #hero{position:relative;width:100%;height:100vh;min-height:640px;overflow:hidden}
@@ -56,8 +57,8 @@ body[data-page="home"] .svc-cta-mark{display:block;width:56px;height:auto;opacit
 .h-vig{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to bottom,rgba(8,8,8,.65) 0%,transparent 24%,transparent 56%,rgba(8,8,8,1) 100%),radial-gradient(ellipse 60% 45% at 50% 50%,transparent 0%,rgba(8,8,8,.45) 100%)}
 .h-grad{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.85) 0%,rgba(8,8,8,.35) 52%,rgba(8,8,8,.02) 100%)}
 .h-main{position:absolute;z-index:10;left:64px;top:50%;transform:translateY(-42%);max-width:min(920px,92vw);opacity:0;animation:fadeUp 1s var(--eout) .6s forwards}
-.h-h1{font-family:var(--serif);font-size:clamp(44px,5.8vw,80px);font-weight:300;line-height:1.06;letter-spacing:-.02em;color:rgba(240,236,230,.97);text-shadow:0 2px 40px rgba(0,0,0,.7),0 1px 8px rgba(0,0,0,.5)}
-.h-h1-line{display:block;white-space:nowrap}
+.h-h1{font-family:var(--serif);font-size:clamp(36px,4.65vw,64px);font-weight:300;line-height:1.08;letter-spacing:-.02em;color:rgba(240,236,230,.97);text-shadow:0 2px 40px rgba(0,0,0,.7),0 1px 8px rgba(0,0,0,.5)}
+.h-h1-line{display:block;white-space:nowrap;margin:0}
 .h-headline-rule{width:40px;height:1px;background:var(--red);margin:22px 0 20px}
 .h-cta-link{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim);transition:color .22s}
 .h-cta-link:hover{color:var(--text)}
@@ -80,12 +81,9 @@ body[data-page="home"] .svc-cta-mark{display:block;width:56px;height:auto;opacit
   .w-cell{grid-column:span 1!important}
   #hero{height:100svh;min-height:560px}
   .h-main{left:24px;max-width:calc(100% - 48px);transform:translateY(-38%)}
-  .h-h1{font-size:clamp(34px,10vw,52px)}
-  body[data-page="home"] .logo-mark-wrap{height:36px}
-  body[data-page="home"] .logo-mark-wrap .logo-mark-img{width:108px}
-  body[data-page="home"] .svc-cta-mark-wrap{height:16px;width:50px}
-  body[data-page="home"] .svc-cta-mark{width:50px}
-  body[data-page="home"] .logo-lockup-name{font-size:15px}
+  .h-h1{font-size:clamp(28px,8.2vw,42px);line-height:1.08}
+  body[data-page="home"] .logo-mark-img{height:40px}
+  body[data-page="home"] .foot-logo-img{height:32px}
   .h-foot-bl{left:24px;bottom:24px;font-size:9px}
   .h-foot-br{right:24px;bottom:44px;font-size:9px;letter-spacing:.12em}
   .h-dots{right:24px;bottom:20px}
@@ -104,8 +102,7 @@ body[data-page="home"] .svc-cta-mark{display:block;width:56px;height:auto;opacit
 
 <nav id="nav">
   <a href="index.html" class="logo-text">
-    <span class="logo-mark-wrap"><img class="logo-mark-img" src="assets/img/logo.png" alt="FivePluSix mark"></span>
-    <span class="logo-lockup-name">FivePluSix</span>
+    <img class="logo-mark-img" src="assets/img/logo.png" alt="FivePluSix">
   </a>
   <div class="nav-links">
     <a href="work.html" data-page="work">Work</a>
@@ -192,7 +189,7 @@ body[data-page="home"] .svc-cta-mark{display:block;width:56px;height:auto;opacit
     <div class="svc-left">
       <h2 class="reveal d1">Full Creative Process</h2>
       <p class="reveal d2">Full creative process — concept, production, strategy, delivery. We don't hand off. We see it through.</p>
-      <a href="contact.html" class="svc-cta svc-cta-home reveal d3">Discuss a Project<span class="svc-cta-mark-wrap"><img class="svc-cta-mark" src="assets/img/logo.png" alt="" aria-hidden="true"></span></a>
+      <a href="contact.html" class="svc-cta svc-cta-home reveal d3">Discuss a Project<img class="svc-cta-mark" src="assets/img/logo.png" alt="" aria-hidden="true"></a>
     </div>
     <div class="svc-list">
       <div class="svc-item reveal"><span class="svc-name">Artist Branding & Identity</span><span class="svc-arr">→</span></div>
@@ -209,7 +206,8 @@ body[data-page="home"] .svc-cta-mark{display:block;width:56px;height:auto;opacit
 
 <footer>
   <div class="foot-inner">
-    <div>
+    <div class="foot-left">
+      <img class="foot-logo-img" src="assets/img/logo.png" alt="FivePluSix">
       <div class="foot-meta-txt">Est. 2017</div>
     </div>
     <div class="foot-links">
