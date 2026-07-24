@@ -40,14 +40,16 @@
 .div-card:hover .div-tag{color:var(--red);border-color:var(--red2)}
 
 /* Home nav + CTA logo — full lockup, no overflow crop */
-body[data-page="home"] .logo-text{align-items:center}
-body[data-page="home"] .logo-mark-img{height:46px;width:auto;max-width:none;max-height:none;object-fit:contain;object-position:center;opacity:.92}
+body[data-page="home"] .logo-text{align-items:center;gap:14px}
+body[data-page="home"] .logo-mark-img{height:62px;width:auto;max-width:none;max-height:none;object-fit:contain;object-position:center;opacity:.92}
+body[data-page="home"] .logo-name{font-family:var(--serif);font-size:clamp(20px,2vw,26px);font-weight:400;letter-spacing:.05em;color:#fff;line-height:1;white-space:nowrap}
 body[data-page="home"] .svc-cta-home::after{content:none}
 body[data-page="home"] .svc-cta-mark{height:18px;width:auto;max-width:72px;object-fit:contain;object-position:center;display:block;flex-shrink:0;opacity:.95}
 
-/* Home footer mark */
-body[data-page="home"] .foot-logo-img{height:36px;width:auto;object-fit:contain;object-position:center;opacity:.72;display:block;margin-bottom:10px}
-body[data-page="home"] .foot-left{display:flex;flex-direction:column;align-items:flex-start}
+/* Service list item mark */
+body[data-page="home"] .svc-item{flex-direction:column;align-items:flex-start;gap:10px}
+body[data-page="home"] .svc-item-top{display:flex;align-items:center;justify-content:space-between;width:100%}
+body[data-page="home"] .svc-item-mark{height:22px;width:auto;max-width:60px;object-fit:contain;object-position:left center;opacity:.55}
 
 /* Hero — full-width video */
 #hero{position:relative;width:100%;height:100vh;min-height:640px;overflow:hidden}
@@ -82,8 +84,8 @@ body[data-page="home"] .foot-left{display:flex;flex-direction:column;align-items
   #hero{height:100svh;min-height:560px}
   .h-main{left:24px;max-width:calc(100% - 48px);transform:translateY(-38%)}
   .h-h1{font-size:clamp(28px,8.2vw,42px);line-height:1.08}
-  body[data-page="home"] .logo-mark-img{height:40px}
-  body[data-page="home"] .foot-logo-img{height:32px}
+  body[data-page="home"] .logo-mark-img{height:44px}
+  body[data-page="home"] .logo-name{font-size:17px}
   .h-foot-bl{left:24px;bottom:24px;font-size:9px}
   .h-foot-br{right:24px;bottom:44px;font-size:9px;letter-spacing:.12em}
   .h-dots{right:24px;bottom:20px}
@@ -103,6 +105,7 @@ body[data-page="home"] .foot-left{display:flex;flex-direction:column;align-items
 <nav id="nav">
   <a href="index.html" class="logo-text">
     <img class="logo-mark-img" src="assets/img/logo.png" alt="FivePluSix">
+    <span class="logo-name">FivePluSix</span>
   </a>
   <div class="nav-links">
     <a href="work.html" data-page="work">Work</a>
@@ -192,14 +195,14 @@ body[data-page="home"] .foot-left{display:flex;flex-direction:column;align-items
       <a href="contact.html" class="svc-cta svc-cta-home reveal d3">Discuss a Project<img class="svc-cta-mark" src="assets/img/logo.png" alt="" aria-hidden="true"></a>
     </div>
     <div class="svc-list">
-      <div class="svc-item reveal"><span class="svc-name">Artist Branding & Identity</span><span class="svc-arr">→</span></div>
-      <div class="svc-item reveal d1"><span class="svc-name">Music Video Production</span><span class="svc-arr">→</span></div>
-      <div class="svc-item reveal d2"><span class="svc-name">Commercial Film</span><span class="svc-arr">→</span></div>
-      <div class="svc-item reveal d3"><span class="svc-name">Websites & Digital Identity</span><span class="svc-arr">→</span></div>
-      <div class="svc-item reveal d4"><span class="svc-name">Brand Campaigns</span><span class="svc-arr">→</span></div>
-      <div class="svc-item reveal"><span class="svc-name">Visual Storytelling</span><span class="svc-arr">→</span></div>
-      <div class="svc-item reveal d1"><span class="svc-name">Creative Direction</span><span class="svc-arr">→</span></div>
-      <div class="svc-item reveal d2"><span class="svc-name">AI-Assisted Production</span><span class="svc-arr">→</span></div>
+      <div class="svc-item reveal"><div class="svc-item-top"><span class="svc-name">Artist Branding & Identity</span><span class="svc-arr">→</span></div><img class="svc-item-mark" src="assets/img/logo.png" alt=""></div>
+      <div class="svc-item reveal d1"><div class="svc-item-top"><span class="svc-name">Music Video Production</span><span class="svc-arr">→</span></div><img class="svc-item-mark" src="assets/img/logo.png" alt=""></div>
+      <div class="svc-item reveal d2"><div class="svc-item-top"><span class="svc-name">Commercial Film</span><span class="svc-arr">→</span></div><img class="svc-item-mark" src="assets/img/logo.png" alt=""></div>
+      <div class="svc-item reveal d3"><div class="svc-item-top"><span class="svc-name">Websites & Digital Identity</span><span class="svc-arr">→</span></div><img class="svc-item-mark" src="assets/img/logo.png" alt=""></div>
+      <div class="svc-item reveal d4"><div class="svc-item-top"><span class="svc-name">Brand Campaigns</span><span class="svc-arr">→</span></div><img class="svc-item-mark" src="assets/img/logo.png" alt=""></div>
+      <div class="svc-item reveal"><div class="svc-item-top"><span class="svc-name">Visual Storytelling</span><span class="svc-arr">→</span></div><img class="svc-item-mark" src="assets/img/logo.png" alt=""></div>
+      <div class="svc-item reveal d1"><div class="svc-item-top"><span class="svc-name">Creative Direction</span><span class="svc-arr">→</span></div><img class="svc-item-mark" src="assets/img/logo.png" alt=""></div>
+      <div class="svc-item reveal d2"><div class="svc-item-top"><span class="svc-name">AI-Assisted Production</span><span class="svc-arr">→</span></div><img class="svc-item-mark" src="assets/img/logo.png" alt=""></div>
     </div>
   </div>
 </section>
@@ -207,7 +210,6 @@ body[data-page="home"] .foot-left{display:flex;flex-direction:column;align-items
 <footer>
   <div class="foot-inner">
     <div class="foot-left">
-      <img class="foot-logo-img" src="assets/img/logo.png" alt="FivePluSix">
       <div class="foot-meta-txt">Est. 2017</div>
     </div>
     <div class="foot-links">
