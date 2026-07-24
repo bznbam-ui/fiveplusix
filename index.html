@@ -39,6 +39,15 @@
 .div-tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);border:1px solid var(--edge);padding:3px 8px;transition:color .22s,border-color .22s}
 .div-card:hover .div-tag{color:var(--red);border-color:var(--red2)}
 
+/* Home nav lockup */
+body[data-page="home"] .logo-text{gap:12px}
+body[data-page="home"] .logo-mark-wrap{display:block;height:clamp(28px,3.4vw,38px);overflow:hidden;flex-shrink:0;line-height:0}
+body[data-page="home"] .logo-mark-wrap .logo-mark-img{display:block;width:clamp(88px,10vw,118px);max-width:none;max-height:none;height:auto;object-fit:cover;object-position:top center;opacity:.92}
+body[data-page="home"] .logo-lockup-name{font-family:var(--serif);font-size:clamp(17px,1.5vw,21px);font-weight:400;letter-spacing:.06em;color:rgba(240,236,230,.92);line-height:1;white-space:nowrap}
+body[data-page="home"] .svc-cta-home::after{content:none}
+body[data-page="home"] .svc-cta-mark-wrap{display:block;width:clamp(52px,6vw,64px);height:18px;overflow:hidden;flex-shrink:0;line-height:0}
+body[data-page="home"] .svc-cta-mark{display:block;width:100%;height:auto;object-fit:cover;object-position:top center;opacity:.95}
+
 /* Hero — full-width video */
 #hero{position:relative;width:100%;height:100vh;min-height:640px;overflow:hidden}
 .h-video-wrap{position:absolute;inset:0;z-index:0;background:#060505}
@@ -47,7 +56,7 @@
 .h-vig{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to bottom,rgba(8,8,8,.65) 0%,transparent 24%,transparent 56%,rgba(8,8,8,1) 100%),radial-gradient(ellipse 60% 45% at 50% 50%,transparent 0%,rgba(8,8,8,.45) 100%)}
 .h-grad{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.85) 0%,rgba(8,8,8,.35) 52%,rgba(8,8,8,.02) 100%)}
 .h-main{position:absolute;z-index:10;left:64px;top:50%;transform:translateY(-42%);max-width:min(560px,78vw);opacity:0;animation:fadeUp 1s var(--eout) .6s forwards}
-.h-h1{font-family:var(--serif);font-size:clamp(40px,5.2vw,72px);font-weight:300;line-height:1.08;letter-spacing:-.02em;color:rgba(240,236,230,.97);text-shadow:0 2px 40px rgba(0,0,0,.7),0 1px 8px rgba(0,0,0,.5)}
+.h-h1{font-family:var(--serif);font-size:clamp(44px,5.8vw,80px);font-weight:300;line-height:1.06;letter-spacing:-.02em;color:rgba(240,236,230,.97);text-shadow:0 2px 40px rgba(0,0,0,.7),0 1px 8px rgba(0,0,0,.5)}
 .h-headline-rule{width:40px;height:1px;background:var(--red);margin:22px 0 20px}
 .h-cta-link{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim);transition:color .22s}
 .h-cta-link:hover{color:var(--text)}
@@ -70,7 +79,10 @@
   .w-cell{grid-column:span 1!important}
   #hero{height:100svh;min-height:560px}
   .h-main{left:24px;max-width:calc(100% - 48px);transform:translateY(-38%)}
-  .h-h1{font-size:clamp(32px,9vw,48px)}
+  .h-h1{font-size:clamp(34px,10vw,52px)}
+  body[data-page="home"] .logo-mark-wrap{height:26px}
+  body[data-page="home"] .logo-mark-wrap .logo-mark-img{width:72px}
+  body[data-page="home"] .logo-lockup-name{font-size:15px}
   .h-foot-bl{left:24px;bottom:24px;font-size:9px}
   .h-foot-br{right:24px;bottom:44px;font-size:9px;letter-spacing:.12em}
   .h-dots{right:24px;bottom:20px}
@@ -89,7 +101,8 @@
 
 <nav id="nav">
   <a href="index.html" class="logo-text">
-    <img class="logo-mark-img" src="assets/img/logo.png" alt="FivePluSix">
+    <span class="logo-mark-wrap"><img class="logo-mark-img" src="assets/img/logo.png" alt=""></span>
+    <span class="logo-lockup-name">FivePluSix</span>
   </a>
   <div class="nav-links">
     <a href="work.html" data-page="work">Work</a>
@@ -121,7 +134,7 @@
   <div class="h-vig"></div>
   <div class="h-grad"></div>
   <div class="h-main">
-    <h1 class="h-h1">A creative label<br>across music,<br>film and culture.</h1>
+    <h1 class="h-h1">A creative label across<br>music, film and culture.</h1>
     <div class="h-headline-rule"></div>
     <a href="work.html" class="h-cta-link">Explore the Work →</a>
   </div>
@@ -131,21 +144,6 @@
     <span>Working internationally</span>
   </div>
   <div class="h-dots" id="hDots"></div>
-</section>
-
-<!-- WORK PREVIEW -->
-<section id="work" style="padding:0 64px 120px;max-width:1440px;margin:0 auto">
-  <div class="sec-head">
-    <div><span class="eyebrow reveal">Portfolio</span><h2 class="reveal d1">Selected Work</h2></div>
-    <a href="work.html" class="see-all reveal d2">All Projects</a>
-  </div>
-  <div class="w-grid">
-    <a href="projects/le-saint-mark.html" class="w-cell reveal"><div class="w-ph"><div class="w-icon">▶</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Music · Visual Identity</div><div class="w-title">Le Saint Mark — Campaign</div></div></a>
-    <a href="projects/brand-campaign.html" class="w-cell reveal d1"><div class="w-ph"><div class="w-icon">◻</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Digital</div><div class="w-title">Brand Campaign</div></div></a>
-    <a href="projects/short-film.html" class="w-cell reveal d2"><div class="w-ph"><div class="w-icon">◈</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Film</div><div class="w-title">Short Film Production</div></div></a>
-    <a href="projects/lfa.html" class="w-cell reveal d1"><div class="w-ph"><div class="w-icon">◎</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Music</div><div class="w-title">LFA — Letters for August</div></div></a>
-    <a href="projects/visual-concept.html" class="w-cell reveal d2"><div class="w-ph"><div class="w-icon">△</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Creative Direction</div><div class="w-title">Visual Concept Series</div></div></a>
-  </div>
 </section>
 
 <!-- DIVISIONS -->
@@ -169,6 +167,21 @@
   <p class="intro-text reveal d1">FivePluSix is a creative label working across music, film, digital identity, and visual culture. We build for artists and brands who think in decades, not quarters.</p>
 </section>
 
+<!-- WORK PREVIEW -->
+<section id="work" style="padding:0 64px 120px;max-width:1440px;margin:0 auto">
+  <div class="sec-head">
+    <div><span class="eyebrow reveal">Portfolio</span><h2 class="reveal d1">Selected Work</h2></div>
+    <a href="work.html" class="see-all reveal d2">All Projects</a>
+  </div>
+  <div class="w-grid">
+    <a href="projects/le-saint-mark.html" class="w-cell reveal"><div class="w-ph"><div class="w-icon">▶</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Music · Visual Identity</div><div class="w-title">Le Saint Mark — Campaign</div></div></a>
+    <a href="projects/brand-campaign.html" class="w-cell reveal d1"><div class="w-ph"><div class="w-icon">◻</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Digital</div><div class="w-title">Brand Campaign</div></div></a>
+    <a href="projects/short-film.html" class="w-cell reveal d2"><div class="w-ph"><div class="w-icon">◈</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Film</div><div class="w-title">Short Film Production</div></div></a>
+    <a href="projects/lfa.html" class="w-cell reveal d1"><div class="w-ph"><div class="w-icon">◎</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Music</div><div class="w-title">LFA — Letters for August</div></div></a>
+    <a href="projects/visual-concept.html" class="w-cell reveal d2"><div class="w-ph"><div class="w-icon">△</div></div><div class="w-arr">↗</div><div class="w-info"><div class="w-cat">Creative Direction</div><div class="w-title">Visual Concept Series</div></div></a>
+  </div>
+</section>
+
 <!-- SERVICES -->
 <section id="services" class="services-section">
   <div class="svc-glow"></div>
@@ -176,7 +189,7 @@
     <div class="svc-left">
       <h2 class="reveal d1">Full Creative Process</h2>
       <p class="reveal d2">Full creative process — concept, production, strategy, delivery. We don't hand off. We see it through.</p>
-      <a href="contact.html" class="svc-cta reveal d3">Discuss a Project</a>
+      <a href="contact.html" class="svc-cta svc-cta-home reveal d3">Discuss a Project<span class="svc-cta-mark-wrap"><img class="svc-cta-mark" src="assets/img/logo.png" alt="" aria-hidden="true"></span></a>
     </div>
     <div class="svc-list">
       <div class="svc-item reveal"><span class="svc-name">Artist Branding & Identity</span><span class="svc-arr">→</span></div>
