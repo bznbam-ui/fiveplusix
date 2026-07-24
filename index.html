@@ -47,11 +47,12 @@
 .h-vig{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to bottom,rgba(8,8,8,.65) 0%,transparent 24%,transparent 56%,rgba(8,8,8,1) 100%),radial-gradient(ellipse 60% 45% at 50% 50%,transparent 0%,rgba(8,8,8,.45) 100%)}
 .h-grad{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.85) 0%,rgba(8,8,8,.35) 52%,rgba(8,8,8,.02) 100%)}
 .h-main{position:absolute;z-index:10;left:64px;top:50%;transform:translateY(-42%);max-width:min(560px,78vw);opacity:0;animation:fadeUp 1s var(--eout) .6s forwards}
-.h-h1{font-family:var(--serif);font-size:clamp(40px,5.2vw,72px);font-weight:600;line-height:1.08;letter-spacing:-.02em;color:rgba(240,236,230,.97);text-shadow:0 2px 40px rgba(0,0,0,.7),0 1px 8px rgba(0,0,0,.5)}
+.h-h1{font-family:var(--serif);font-size:clamp(40px,5.2vw,72px);font-weight:300;line-height:1.08;letter-spacing:-.02em;color:rgba(240,236,230,.97);text-shadow:0 2px 40px rgba(0,0,0,.7),0 1px 8px rgba(0,0,0,.5)}
 .h-headline-rule{width:40px;height:1px;background:var(--red);margin:22px 0 20px}
 .h-cta-link{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim);transition:color .22s}
 .h-cta-link:hover{color:var(--text)}
-.h-foot-bl{position:absolute;z-index:10;left:64px;bottom:32px;font-family:var(--serif);font-size:11px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;color:var(--faint)}
+.h-foot-bl{position:absolute;z-index:10;left:64px;bottom:32px}
+.h-foot-logo{height:22px;width:auto;object-fit:contain;opacity:.42}
 .h-foot-br{position:absolute;z-index:10;right:64px;bottom:52px;text-align:right;display:flex;flex-direction:column;gap:6px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);line-height:1.45}
 .h-dots{position:absolute;bottom:28px;right:64px;z-index:11;display:flex;gap:8px;opacity:0;animation:fadeIn 1s var(--eout) 1.9s forwards}
 .h-dot{width:5px;height:5px;border-radius:50%;background:rgba(240,236,230,.18);transition:background .4s,transform .4s}
@@ -82,17 +83,13 @@
 <body data-page="home">
 
 <div id="preloader">
-  <div id="pre-word">FivePluSix</div>
+  <img id="pre-logo" class="pre-logo" src="assets/img/logo.png" alt="FivePluSix">
   <div id="pre-line"></div>
 </div>
 
 <nav id="nav">
   <a href="index.html" class="logo-text">
     <img class="logo-mark-img" src="assets/img/logo.png" alt="FivePluSix">
-    <div>
-      <span class="logo-name">FivePluSix</span>
-      <span class="logo-sub-txt">Art Across Dimensions</span>
-    </div>
   </a>
   <div class="nav-links">
     <a href="work.html" data-page="work">Work</a>
@@ -128,7 +125,7 @@
     <div class="h-headline-rule"></div>
     <a href="work.html" class="h-cta-link">Explore the Work →</a>
   </div>
-  <div class="h-foot-bl">FivePluSix</div>
+  <div class="h-foot-bl"><img class="h-foot-logo" src="assets/img/logo.png" alt="FivePluSix"></div>
   <div class="h-foot-br">
     <span>Founded in Helsinki</span>
     <span>Working internationally</span>
@@ -197,7 +194,7 @@
 <footer>
   <div class="foot-inner">
     <div>
-      <div class="foot-wordmark">FivePluSix</div>
+      <img class="foot-logo-img" src="assets/img/logo.png" alt="FivePluSix">
       <div class="foot-meta-txt">Est. 2017</div>
     </div>
     <div class="foot-links">

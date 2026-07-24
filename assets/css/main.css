@@ -25,16 +25,14 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   transition:opacity .9s var(--eout),visibility .9s;
 }
 #preloader.done{opacity:0;visibility:hidden}
-#pre-word{
-  font-family:var(--serif);
-  font-size:clamp(28px,4.5vw,48px);
-  font-weight:300;
-  letter-spacing:.35em;
-  color:rgba(240,236,230,0);
-  text-transform:uppercase;
-  transition:color 1s var(--eout), letter-spacing 1.1s var(--eout);
+#pre-logo{
+  width:clamp(140px,22vw,220px);
+  height:auto;
+  object-fit:contain;
+  opacity:0;
+  transition:opacity 1s var(--eout);
 }
-#pre-word.vis{color:rgba(240,236,230,.88);letter-spacing:.42em}
+#pre-logo.vis{opacity:.88}
 #pre-line{
   width:0;height:1px;
   background:rgba(201,24,24,.7);
@@ -44,6 +42,12 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* ── SHARED TYPOGRAPHY ─────────────────────────────── */
 h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.06}
+.page-hero h1,
+.sec-head h2,
+.div-head h2,
+.svc-left h2,
+.con-left h2,
+.profile-name{font-weight:300}
 .eyebrow{display:block;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:18px}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .85s var(--eout),transform .85s var(--eout)}
 .reveal.vis{opacity:1;transform:none}
@@ -52,10 +56,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.06}
 /* ── NAV ───────────────────────────────────────────── */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:84px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;transition:background .35s,border-color .35s;border-bottom:1px solid transparent}
 nav.scrolled{background:rgba(8,8,8,.95);backdrop-filter:blur(12px);border-color:var(--edge)}
-.logo-text{display:flex;align-items:center;gap:14px}
+.logo-text{display:flex;align-items:center}
 .logo-mark-img{height:84px;width:auto;max-height:calc(100% - 12px);object-fit:contain;opacity:.92;flex-shrink:0}
-.logo-name{font-family:var(--serif);font-size:21px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,236,230,.9);line-height:1}
-.logo-sub-txt{font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
 .nav-links{display:flex;align-items:center;gap:36px}
 .nav-links a{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim);transition:color .2s}
 .nav-links a:hover{color:var(--text)}.nav-links a.active{color:rgba(240,236,230,.9)}
@@ -303,7 +305,7 @@ nav.scrolled{background:rgba(8,8,8,.95);backdrop-filter:blur(12px);border-color:
 /* ── FOOTER ────────────────────────────────────────── */
 footer{background:var(--bg2);border-top:1px solid var(--edge);padding:44px 64px}
 .foot-inner{max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
-.foot-wordmark{font-family:var(--serif);font-size:17px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,236,230,.4)}
+.foot-logo-img{height:30px;width:auto;object-fit:contain;opacity:.42}
 .foot-meta-txt{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-top:4px}
 .foot-links{display:flex;flex-wrap:wrap;gap:26px}
 .foot-links a{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);transition:color .2s}
@@ -343,8 +345,7 @@ footer{background:var(--bg2);border-top:1px solid var(--edge);padding:44px 64px}
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
   .logo-mark-img{height:62px;max-height:calc(100% - 8px)}
-  .logo-name{font-size:16px}
-  .logo-sub-txt{display:none}
+  .foot-logo-img{height:26px}
   .page-hero{padding:110px 24px 60px}
   .page-hero-rule{left:24px}
   .team-core,.artists-roster,.releases-section,.directors-section,.film-grid,.related-projects{padding-left:24px;padding-right:24px}

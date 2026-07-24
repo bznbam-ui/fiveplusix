@@ -4,10 +4,13 @@
 /* PRELOADER */
 window.addEventListener('DOMContentLoaded', () => {
   const pre  = document.getElementById('preloader');
-  const word = document.getElementById('pre-word');
+  const logo = document.getElementById('pre-logo');
   const line = document.getElementById('pre-line');
   if (!pre) return;
-  setTimeout(() => { word.classList.add('vis'); line.classList.add('vis'); }, 60);
+  setTimeout(() => {
+    if (logo) logo.classList.add('vis');
+    if (line) line.classList.add('vis');
+  }, 60);
   setTimeout(() => pre.classList.add('done'), 1800);
 });
 
